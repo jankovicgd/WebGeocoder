@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, send_file
+import pandas
 
 app = Flask(__name__)
 
@@ -12,7 +13,8 @@ def success():
         file = request.files["files"]
         content = file.read()
         print(file)
-        return render_template("success.html")
+        print(content)
+        return render_template("index.html")
 
 if __name__ == '__main__':
     app.debug = True
